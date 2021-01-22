@@ -1,0 +1,69 @@
+HW1
+================
+
+### Q1. Leaflet Figure (6 points)
+
+Find or create a spatial dataset and make a leaflet figure to display
+some aspect of the dataset. Please include the relevant data in your
+repo (this will be private so only the instructor can see).
+
+Note: you may need to change the output type to HTML (line 3 of the .RMD
+file ) to render a leaflet figure. You are also welcome to submit a
+screenshot of your figure.
+
+### Q2. Data Simulation
+
+Simulate data from a two-sample t-test framework.
+
+#### a. Statistical Model (4 points)
+
+Write out the statistical model for a two-sample t-test. Include clear
+notation for all model parameters.
+
+Note that latex can be incorporated in .RMD documents
+
+*y* ∼ *N*()
+
+#### b. Statistical Model (4 points)
+
+Fit the model using `t.test()` and interpret the results.
+
+#### c. Statistical Model (4 points)
+
+Fit the model using `lm()` and/or `stan_glm()` and interpret the
+results.
+
+### Q3. Data Analysis
+
+Using a dataset with butterfly movements, build a statistical model to
+predict butterfly “step distance”. Additional details on the dataset are
+available:
+<https://data.mendeley.com/datasets/kpcgkfmpv8/1/files/abd61d7d-1188-4d1d-b669-59acc5f1f43c>
+
+The code below creates a subset of butterfly movement distances for
+butterflies in flight.
+
+``` r
+butterfly <- read_csv('https://raw.githubusercontent.com/STAT505/project2/master/butterfly.csv') %>% filter(Behaviour == 'F', !is.na(Sex)) %>% select(-Behaviour, -Track.num)
+```
+
+#### a. Exploratory Data Visualization (4 points)
+
+Create at least one figure, preferably more, to display the relationship
+between Step\_distance and Species, Sex, (and/or) Air Temp.
+
+Include informative captions, titles, and legends on your figure.
+
+#### b. Model specification (4 points)
+
+The goal is to build the best predictive model for step distance as a
+function of Species, Sex, and Air Temperature. Fit a few models and
+write out the “best” model that you can find.
+
+If you opt to use a Bayesian approach, make sure to clearly state what
+priors you have used.
+
+#### c. Model summary (4 points)
+
+Summarize your model findings. Avoid only using technical statistical
+lingo and discuss the results in the context of butterflies.
